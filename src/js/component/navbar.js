@@ -19,9 +19,8 @@ export const Navbar = () => {
           
           <ul class="dropdown-menu">
             {/* map de los elementos que tengo en favoritos */}
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
+            <li><Link to="" class="dropdown-item" href="#">Action</Link></li>
+            <li><Link to="" class="dropdown-item" href="#">Action</Link></li>
           </ul>
         </li>
       </ul>

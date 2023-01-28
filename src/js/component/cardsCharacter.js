@@ -1,20 +1,19 @@
 import React, { Component, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
+export const CardsCharacters = (props) => {
+const [charactersID, setCharactersID] = useState();
 
 
 
-
-export const CardsCharacters = () => {
   return (
-    <div className="container my-5">
-    <h3 className="text-danger">Characters</h3>
+    // <div className="container my-5">
     <div className="card" style={{ width: "400px" }}>
       <img className="card-img-top" src="..." alt="Card image cap" />
       <div className="card-body">
-        <h5 className="card-title">Title</h5>
+        <h5 className="card-title">{props.name}</h5>
         <p className="card-text">
-          Gender
+      {/* {charactersID} */}
         </p>
         <p className="card-text">
           Hair
@@ -35,6 +34,6 @@ export const CardsCharacters = () => {
         {/* ..... */}
       </div>
     </div>
-    </div>
+    // </div>
   );
 };

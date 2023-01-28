@@ -9,8 +9,8 @@ import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
-import { AllCards } from "./component/allCards";
-import { SingleCard } from "./component/singleCard";
+import { AllCards } from "./views/allCards.js";
+import { SingleCard } from "./views/singleCard";
 
 
 //create your first component
@@ -19,6 +19,7 @@ const Layout = () => {
 	// you can set the basename on the .env file located at the root of this project, E.g: BASENAME=/react-hello-webapp/
 	const basename = process.env.BASENAME || "";
 
+
 	return (
 		<div>
 			<BrowserRouter basename={basename}>
@@ -26,8 +27,7 @@ const Layout = () => {
 					<Navbar />
 					<Routes>
 						<Route path="/" element={<AllCards />} />
-						<Route path="/singlecard" element={<SingleCard />} />
-
+						<Route path="/singlecard/:theid" element={<SingleCard />} />
 
 						{/* <Route path="/" element={<Home />} /> */}
 						{/* <Route path="/demo" element={<Demo />} />
