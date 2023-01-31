@@ -1,5 +1,5 @@
 import React, { Component, useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { CardsCharacters } from "../component/cardsCharacter";
 import { CardsPlanets } from "../component/cardsPlanets";
 import { CardsVehicles } from "../component/cardsVehicles";
@@ -8,6 +8,7 @@ export const AllCards = () => {
   const [characters, setCharacters] = useState({});
 
   function bringCharacters() {
+    // const params = useParams()
     fetch("https://www.swapi.tech/api/people/")
       .then((res) => res.json())
       .then((data) => setCharacters(data.results))
@@ -17,7 +18,7 @@ export const AllCards = () => {
   useEffect(() => {
     bringCharacters();
   }, []);
-  console.log(characters);
+  // console.log(characters);
 
   return (
     <div className="container">
