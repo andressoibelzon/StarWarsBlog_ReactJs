@@ -21,22 +21,47 @@ export const AllCards = () => {
   // console.log(characters);
 
   return (
-    <div className="container">
-      <div className="cotainer">
-        <h5>Characters</h5>
-        {characters.length > 0
+    <div className="d-flex flex-column " id="allCards">
+      {/* aca empieza el de los personajes */}
+      <h5 className="text-danger">Characters</h5>
+      <div className="d-flex flex-row ">
+        {characters.length > 0 
           ? characters.map((item) => (
               <CardsCharacters
                 key={item.uid}
                 name={item.name}
                 id={item.uid}
-                url={item.url}
               />
             ))
           : null}
       </div>
-      <CardsPlanets />
-      <CardsVehicles />
+      {/* aca empieza el de los planetas */}
+      <h5 className="text-danger">Planets</h5>
+      <div className="d-flex flex-row ">
+        {characters.length > 0 
+          ? characters.map((item) => (
+              <CardsPlanets
+                key={item.uid}
+                name={item.name}
+                id={item.uid}
+              />
+            ))
+          : null}
+      </div>
+      
+      {/* aca empieza el de los vehiculos */}
+      <h5 className="text-danger">Vehicles</h5>
+      <div className="d-flex flex-row ">
+        {characters.length > 0 
+          ? characters.map((item) => (
+              <CardsVehicles
+                key={item.uid}
+                name={item.name}
+                id={item.uid}
+              />
+            ))
+          : null}
+      </div>
     </div>
   );
 };
