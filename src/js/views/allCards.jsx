@@ -1,32 +1,24 @@
-import React, { Component, useState, useEffect } from "react";
+import React, { Component, useState, useEffect, useContext } from "react";
 import { Link, useParams } from "react-router-dom";
 import { CardsCharacters } from "../component/cardsCharacter";
 import { CardsPlanets } from "../component/cardsPlanets";
 import { CardsVehicles } from "../component/cardsVehicles";
+import { Context } from "../store/appContext";
+
 
 export const AllCards = () => {
-  const [characters, setCharacters] = useState({});
 
-  function bringCharacters() {
-    // const params = useParams()
-    fetch("https://www.swapi.tech/api/people/")
-      .then((res) => res.json())
-      .then((data) => setCharacters(data.results))
-      .catch((err) => console.error(err));
-  }
-
-  useEffect(() => {
-    bringCharacters();
-  }, []);
-  // console.log(characters);
+	const {store, actions} = (useContext(Context));
+  console.log(useContext(Context))
 
   return (
     <div className="d-flex flex-column " id="allCards">
+      <button onClick={()=>actions.agregarFavs}>Agregar a Favoritos</button>
       {/* aca empieza el de los personajes */}
       <h5 className="text-danger">Characters</h5>
       <div className="d-flex flex-row ">
-        {characters.length > 0 
-          ? characters.map((item) => (
+        {personajes.length > 0 
+          ? personajes.map((item) => (
               <CardsCharacters
                 key={item.uid}
                 name={item.name}
@@ -36,7 +28,7 @@ export const AllCards = () => {
           : null}
       </div>
       {/* aca empieza el de los planetas */}
-      <h5 className="text-danger">Planets</h5>
+      {/* <h5 className="text-danger">Planets</h5>
       <div className="d-flex flex-row ">
         {characters.length > 0 
           ? characters.map((item) => (
@@ -47,10 +39,10 @@ export const AllCards = () => {
               />
             ))
           : null}
-      </div>
+      </div> */}
       
       {/* aca empieza el de los vehiculos */}
-      <h5 className="text-danger">Vehicles</h5>
+      {/* <h5 className="text-danger">Vehicles</h5>
       <div className="d-flex flex-row ">
         {characters.length > 0 
           ? characters.map((item) => (
@@ -61,7 +53,7 @@ export const AllCards = () => {
               />
             ))
           : null}
-      </div>
+      </div> */}
     </div>
   );
 };
