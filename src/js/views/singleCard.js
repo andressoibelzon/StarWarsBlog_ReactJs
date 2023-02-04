@@ -1,35 +1,21 @@
-import React, { Component, useState, useEffect } from "react";
+import React, { Component, useState, useEffect, useContext } from "react";
 import { Link, useParams } from "react-router-dom";
+import { Context } from "../store/appContext";
+
 
 export const SingleCard = (props) => {
-  const params = useParams();
-  // console.log(params.theid);
-  const [characters, setCharacters] = useState({});
-  const [description, setDescription] = useState({});
 
+  const params = useParams()
+  console.log(params)
 
-  function characterFetch() {
-    fetch("https://www.swapi.tech/api/people/" + params.theid)
-      .then((res) => res.json())
-      .then((data) => setCharacters(data.result.properties))
-      .catch((err) => console.error(err));
-  }
+  const {store, actions} = useContext(Context);
+    console.log(useContext(Context))
 
+  useEffect(()=>{
+    actions.obtenerPersonajesIndividuales(params.theid)
+  },[]) 
 
-  function descriptionFetch() {
-    fetch("https://www.swapi.tech/api/people/" + params.theid)
-      .then((res) => res.json())
-      .then((data) => setDescription(data.result))
-      .catch((err) => console.error(err));
-  }
-
-
-  useEffect(() => {
-    characterFetch();
-    descriptionFetch();
-  }, []);
-
-  console.log(characters)
+  console.log(store.informacionPersonaje.properties)
 
   return (
     <>
@@ -37,18 +23,17 @@ export const SingleCard = (props) => {
         <div className="row">
           <div className="col col-8">
           <div className="card d-flex" style={{ width: "400px" }}>
-          <img className="card-img-top" src={"https://starwars-visualguide.com/assets/img/characters/"+ props.id +".jpg"} alt="Card image cap" />
+          <img className="card-img-top" src={"https://starwars-visualguide.com/assets/img/characters/" + params.theid + ".jpg"} alt="Card image cap" />
           </div>
           </div>
           <div className="col col-4">
-            <h3>{characters.name}</h3>
-            <p>{description.description}</p>
+            <h3>{store.informacionPersonaje.properties?.name}</h3>
           </div>
         </div>
       </div>
       <hr></hr>
       {/* table */}
-      <table class="table container">
+      <table className="table container">
     <tr>
       <th scope="col">Name</th>
       <th scope="col">Birth</th>
@@ -59,15 +44,15 @@ export const SingleCard = (props) => {
     </tr>
   <tbody>
     <tr>
-      <td>{characters.name}</td>
-      <td>{characters.birth_year}</td>
-      <td>{characters.gender}</td>
-      <td>{characters.height}</td>
-      <td>{characters.skin_color}</td>
-      <td>{characters.eye_color}</td>
+      <td>{store.informacionPersonaje.properties?.name}</td>
+      <td>{store.informacionPersonaje.properties?.birth_year}</td>
+      <td>{store.informacionPersonaje.properties?.gender}</td>
+      <td>{store.informacionPersonaje.properties?.height}</td>
+      <td>{store.informacionPersonaje.properties?.skin_color}</td>
+      <td>{store.informacionPersonaje.properties?.eye_color}</td>
     </tr>
   </tbody>
-</table>
+</table> 
 <div className=" container">
       <Link to="/" className="btn btn-primary">
         Go Back

@@ -8,21 +8,23 @@ import { Context } from "../store/appContext";
 
 export const AllCards = () => {
 
-	const {store, actions} = (useContext(Context));
-  console.log(useContext(Context))
+	const {store, actions} = useContext(Context);
+  // console.log(useContext(Context))
+  // console.log(store.personajes)
 
   return (
     <div className="d-flex flex-column " id="allCards">
-      <button onClick={()=>actions.agregarFavs}>Agregar a Favoritos</button>
+      {/* <button onClick={()=>actions.agregarFavs}>Agregar a Favoritos</button> */}
       {/* aca empieza el de los personajes */}
       <h5 className="text-danger">Characters</h5>
       <div className="d-flex flex-row ">
-        {personajes.length > 0 
-          ? personajes.map((item) => (
+        {store.personajes.length > 0 
+          ? store.personajes.map((item) => (
               <CardsCharacters
                 key={item.uid}
-                name={item.name}
                 id={item.uid}
+                name={item.name}
+                
               />
             ))
           : null}

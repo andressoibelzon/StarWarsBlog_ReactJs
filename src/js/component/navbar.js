@@ -14,7 +14,7 @@ export const Navbar = () => {
       <ul class="navbar-nav">
         <li class="nav-item dropdown">
           <a class="btn btn-primary" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Favourites
+            Favorites
           </a>
           
           <ul class="dropdown-menu">

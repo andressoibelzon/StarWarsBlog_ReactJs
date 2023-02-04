@@ -8,14 +8,16 @@ const getState = ({
             personajes: [],
             planetas: [],
             vehiculos: [],
+            favs: [],
             informacionPersonaje: [],
             informacionPlaneta: [],
             informacionVehiculo: [],
+            params: []
         },
         actions: {
             // Use getActions to call a function within a fuction
             obtenerPersonajes: () => {
-                fetch("https://www.swapi.tech/api/people/", {
+                fetch("https://swapi.tech/api/people", {
                         method: "GET"
                     })
                     .then(res => res.json())
@@ -44,11 +46,11 @@ const getState = ({
                     }))
                     .catch(err => console.error(err))
             },
-            obtenerPersonajesIndividuales: () => {
-                fetch("https://www.swapi.tech/api/people/" + params.theid)
+            obtenerPersonajesIndividuales: (id) => {
+                fetch("https://www.swapi.tech/api/people/" + id)
                     .then(res => res.json())
                     .then(data => setStore({
-                        informacionPersonaje: data.results
+                        informacionPersonaje: data.result
                     }))
                     .catch(err => console.error(err))
             },
@@ -69,7 +71,12 @@ const getState = ({
                     .catch(err => console.error(err))
             },
             agregarFavs: () => {
-                console.log("agregado...")
+                console.log()
+                // setArray(array.concat({
+                //     label: input,
+                //     done: true
+                // }));
+                // setInput("");
             },
             changeColor: (index, color) => {
                 //get the store
@@ -82,7 +89,7 @@ const getState = ({
                 });
                 //reset the global store
                 setStore({
-                    demo: demo
+                    demo: demo,
                 });
             }
         }
