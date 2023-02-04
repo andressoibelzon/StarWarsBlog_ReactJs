@@ -9,31 +9,32 @@ export const SingleCard = (props) => {
   console.log(params)
 
   const {store, actions} = useContext(Context);
-    console.log(useContext(Context))
+    // console.log(useContext(Context))
 
   useEffect(()=>{
     actions.obtenerPersonajesIndividuales(params.theid)
   },[]) 
 
-  console.log(store.informacionPersonaje.properties)
+  // console.log(store.informacionPersonaje.properties)
 
   return (
     <>
-      <div className="container text-center">
+      <div className="container ">
         <div className="row">
           <div className="col col-8">
+          <h3>{store.informacionPersonaje.properties?.name}</h3>
           <div className="card d-flex" style={{ width: "400px" }}>
+          <div className="col col-4">
+          </div>
           <img className="card-img-top" src={"https://starwars-visualguide.com/assets/img/characters/" + params.theid + ".jpg"} alt="Card image cap" />
           </div>
-          </div>
-          <div className="col col-4">
-            <h3>{store.informacionPersonaje.properties?.name}</h3>
           </div>
         </div>
       </div>
       <hr></hr>
+
       {/* table */}
-      <table className="table container">
+      <table className="table container text-center">
     <tr>
       <th scope="col">Name</th>
       <th scope="col">Birth</th>
@@ -54,7 +55,7 @@ export const SingleCard = (props) => {
   </tbody>
 </table> 
 <div className=" container">
-      <Link to="/" className="btn btn-primary">
+      <Link to="/" className="btn btn-outline-primary">
         Go Back
       </Link>
 </div>

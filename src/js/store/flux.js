@@ -12,7 +12,6 @@ const getState = ({
             informacionPersonaje: [],
             informacionPlaneta: [],
             informacionVehiculo: [],
-            params: []
         },
         actions: {
             // Use getActions to call a function within a fuction
@@ -70,13 +69,21 @@ const getState = ({
                     }))
                     .catch(err => console.error(err))
             },
-            agregarFavs: () => {
-                console.log()
-                // setArray(array.concat({
-                //     label: input,
-                //     done: true
-                // }));
-                // setInput("");
+            agregarFavs: (name) => {
+                //aca paso el nombre
+                console.log(name)
+
+
+
+
+
+                console.log(favs)
+
+
+                // lo que tengo que hacer es que favs : {
+                // 01, "luke", borrar
+                // },
+                // 01, "artu", borrar
             },
             changeColor: (index, color) => {
                 //get the store

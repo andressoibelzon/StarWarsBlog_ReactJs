@@ -14,7 +14,6 @@ export const AllCards = () => {
 
   return (
     <div className="d-flex flex-column " id="allCards">
-      {/* <button onClick={()=>actions.agregarFavs}>Agregar a Favoritos</button> */}
       {/* aca empieza el de los personajes */}
       <h5 className="text-danger">Characters</h5>
       <div className="d-flex flex-row ">

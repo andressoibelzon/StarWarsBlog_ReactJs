@@ -23,6 +23,7 @@ const injectContext = PassedComponent => {
 
 		useEffect(() => {
 			state.actions.obtenerPersonajes()
+			state.store.favs
 			// state.actions.obtenerPersonajesIndividuales()
 
 			/**

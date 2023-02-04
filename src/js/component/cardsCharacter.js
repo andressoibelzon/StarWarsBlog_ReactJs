@@ -6,11 +6,6 @@ export const CardsCharacters = (props) => {
 
   const {store, actions} = useContext(Context);
 
-  // useEffect(()=>{
-  //   actions.agregarFavs()
-  // },[])
-
-
   return (
     <div className="container my-5">
     <div className="card d-flex" style={{ width: "400px" }}>
@@ -23,7 +18,7 @@ export const CardsCharacters = (props) => {
           Learn More!
         </Link>
         {/* buton onClick agrega a favourites, osea que hago un useState aca  */}
-        <button onClick={()=>actions.agregarFavs()} className="btn btn-outline-warning">
+        <button onClick={()=>actions.agregarFavs(store.favs.concat({nombre: props.name}))} className="btn btn-outline-warning">
           ♡
         </button>
         </div>
