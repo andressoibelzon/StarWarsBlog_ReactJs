@@ -72,18 +72,16 @@ const getState = ({
             agregarFavs: (name) => {
                 //aca paso el nombre
                 console.log(name)
+                const newFavs = getStore().favs.concat({
+                    nombre: name
+                })
+                setStore({
+                    favs: newFavs
+                })
+
+                console.log(newFavs)
 
 
-
-
-
-                console.log(favs)
-
-
-                // lo que tengo que hacer es que favs : {
-                // 01, "luke", borrar
-                // },
-                // 01, "artu", borrar
             },
             changeColor: (index, color) => {
                 //get the store
