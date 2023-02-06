@@ -69,18 +69,23 @@ const getState = ({
                     }))
                     .catch(err => console.error(err))
             },
-            agregarFavs: (name) => {
-                //aca paso el nombre
-                console.log(name)
+            agregarFavs: (name, uid) => {
                 const newFavs = getStore().favs.concat({
-                    nombre: name
+                    nombre: name,
+                    id: uid
                 })
                 setStore({
                     favs: newFavs
                 })
+            },
+            deleteFavs: (uid) => {
+                console.log("delete")
 
-                console.log(newFavs)
+                const something = () => getStore()
+                something()
 
+                deleteFav = favs[uid]
+                setStore(favs.filter((item) => item != deleteFav));
 
             },
             changeColor: (index, color) => {

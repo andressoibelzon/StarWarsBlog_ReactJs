@@ -2,9 +2,8 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
 
-export const Navbar = () => {
+export const Navbar = (props) => {
   const { store, actions } = useContext(Context);
-  console.log(store.favs);
 
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary ">
@@ -41,11 +40,13 @@ export const Navbar = () => {
                 {/* map de los elementos que tengo en favoritos */}
                 {store.favs.map((item, index) => {
                   return (
-                  <li key={index}>
+                  <li key={index}
+                  className="px-2"
+                  >
                     {item.nombre}
                     <button
-                className="btn btn-danger"
-                // onClick={() => deleteTask(index)}
+                className="btn btn-danger mx-3"
+                onClick={() => actions.deleteFavs(props.id)}
               >
                 x
               </button>

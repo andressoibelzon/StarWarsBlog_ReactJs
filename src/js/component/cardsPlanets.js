@@ -23,7 +23,7 @@ export const CardsPlanets = (props) => {
           Learn More!
         </Link>
         {/* buton onClick agrega a favourites, osea que hago un useState aca  */}
-        <button className="btn btn-outline-warning">
+        <button onClick={()=>actions.agregarFavs(props.name)} className="btn btn-outline-warning">
           ♡
         </button>
         </div>
