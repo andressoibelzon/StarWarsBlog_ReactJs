@@ -19,7 +19,7 @@ export const CardsPlanets = (props) => {
 
         {/* la parte de abajo de los dos botones */}
         <div className="d-flex justify-content-between">
-        <Link to="/singlecard/planets/" className="btn btn-outline-primary">
+        <Link to={"/singlecard/planet/" + props.id }className="btn btn-outline-primary">
           Learn More!
         </Link>
         {/* buton onClick agrega a favourites, osea que hago un useState aca  */}

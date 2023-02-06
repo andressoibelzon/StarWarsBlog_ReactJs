@@ -16,7 +16,7 @@ export const CardsVehicles = (props) => {
         <h5 className="card-title">{props.name}</h5>
         {/* la parte de abajo de los dos botones */}
         <div className="d-flex justify-content-between">
-        <Link to="/singlecard/vehicles/" className="btn btn-outline-primary">
+        <Link to={ "/singlecard/vehicle/" + props.id } className="btn btn-outline-primary">
           Learn More!
         </Link>
         {/* buton onClick agrega a favourites, osea que hago un useState aca  */}

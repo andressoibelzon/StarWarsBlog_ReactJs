@@ -54,18 +54,18 @@ const getState = ({
                     .catch(err => console.error(err))
             },
             obtenerPlanetasIndividuales: (id) => {
-                fetch("https://www.swapi.tech/api/planets/" + params.theid)
+                fetch("https://www.swapi.tech/api/planets/" + id)
                     .then(res => res.json())
                     .then(data => setStore({
-                        informacionPlaneta: data.results
+                        informacionPlaneta: data.result
                     }))
                     .catch(err => console.error(err))
             },
             obtenerVehiculosIndividuales: (id) => {
-                fetch("https://www.swapi.tech/api/vehicles/" + params.theid)
+                fetch("https://www.swapi.tech/api/vehicles/" + id)
                     .then(res => res.json())
                     .then(data => setStore({
-                        informacionVehiculo: data.results
+                        informacionVehiculo: data.result
                     }))
                     .catch(err => console.error(err))
             },
