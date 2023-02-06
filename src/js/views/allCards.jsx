@@ -9,13 +9,11 @@ import { Context } from "../store/appContext";
 export const AllCards = () => {
 
 	const {store, actions} = useContext(Context);
-  // console.log(useContext(Context))
-  // console.log(store.personajes)
 
   return (
     <div className="d-flex flex-column " id="allCards">
       {/* aca empieza el de los personajes */}
-      <h5 className="text-danger">Characters</h5>
+      <h5 className="text-danger px-2">Characters</h5>
       <div className="d-flex flex-row ">
         {store.personajes.length > 0 
           ? store.personajes.map((item) => (
@@ -29,10 +27,10 @@ export const AllCards = () => {
           : null}
       </div>
       {/* aca empieza el de los planetas */}
-      {/* <h5 className="text-danger">Planets</h5>
+      <h5 className="text-danger px-2">Planets</h5>
       <div className="d-flex flex-row ">
-        {characters.length > 0 
-          ? characters.map((item) => (
+        {store.planetas.length > 0 
+          ? store.planetas.map((item) => (
               <CardsPlanets
                 key={item.uid}
                 name={item.name}
@@ -40,13 +38,13 @@ export const AllCards = () => {
               />
             ))
           : null}
-      </div> */}
+      </div>
       
       {/* aca empieza el de los vehiculos */}
-      {/* <h5 className="text-danger">Vehicles</h5>
+      <h5 className="text-danger px-2">Vehicles</h5>
       <div className="d-flex flex-row ">
-        {characters.length > 0 
-          ? characters.map((item) => (
+        {store.vehiculos.length > 0 
+          ? store.vehiculos.map((item) => (
               <CardsVehicles
                 key={item.uid}
                 name={item.name}
@@ -54,7 +52,7 @@ export const AllCards = () => {
               />
             ))
           : null}
-      </div> */}
+      </div>
     </div>
   );
 };

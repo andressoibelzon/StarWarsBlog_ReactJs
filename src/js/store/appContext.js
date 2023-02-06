@@ -23,6 +23,8 @@ const injectContext = PassedComponent => {
 
 		useEffect(() => {
 			state.actions.obtenerPersonajes()
+			state.actions.obtenerPlanetas()
+			state.actions.obtenerVehiculos()
 			// state.store.favs
 			// state.actions.obtenerPersonajesIndividuales()
 

@@ -53,7 +53,7 @@ const getState = ({
                     }))
                     .catch(err => console.error(err))
             },
-            obtenerPlaneta: () => {
+            obtenerPlanetasIndividuales: (id) => {
                 fetch("https://www.swapi.tech/api/planets/" + params.theid)
                     .then(res => res.json())
                     .then(data => setStore({
@@ -61,7 +61,7 @@ const getState = ({
                     }))
                     .catch(err => console.error(err))
             },
-            obtenerVehiculo: () => {
+            obtenerVehiculosIndividuales: (id) => {
                 fetch("https://www.swapi.tech/api/vehicles/" + params.theid)
                     .then(res => res.json())
                     .then(data => setStore({

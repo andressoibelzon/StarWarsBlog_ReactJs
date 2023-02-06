@@ -40,6 +40,7 @@ export const Navbar = () => {
               <ul className="dropdown-menu">
                 {/* map de los elementos que tengo en favoritos */}
                 {store.favs.map((item, index) => {
+                  return (
                   <li key={index}>
                     {item.nombre}
                     <button
@@ -48,7 +49,7 @@ export const Navbar = () => {
               >
                 x
               </button>
-                  </li>;
+                  </li>);
                 })}
               </ul>
             </li>
