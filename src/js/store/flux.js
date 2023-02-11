@@ -78,14 +78,17 @@ const getState = ({
                     favs: newFavs
                 })
             },
-            deleteFavs: (uid) => {
+            deleteFavs: (name) => {
                 console.log("delete")
+                console.log(name)
 
-                const something = () => getStore()
-                something()
+                const store = getStore();
+                console.log(store.favs)
+                const newFavStore = store.favs.filter((item) => item.nombre !== name)
+                setStore({
+                    favs: newFavStore
+                })
 
-                deleteFav = favs[uid]
-                setStore(favs.filter((item) => item != deleteFav));
 
             },
             changeColor: (index, color) => {

@@ -46,7 +46,7 @@ export const Navbar = (props) => {
                     {item.nombre}
                     <button
                 className="btn btn-danger mx-3"
-                onClick={() => actions.deleteFavs(props.id)}
+                onClick={() => actions.deleteFavs(item.nombre)}
               >
                 x
               </button>
