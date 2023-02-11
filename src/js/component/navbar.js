@@ -23,9 +23,9 @@ export const Navbar = (props) => {
           <span className="navbar-toggler-icon"></span>
         </button>
         {/* empieza el dropdown */}
-        <div className="collapse navbar-collapse" id="navbarNavDropdown">
+        <div className="collapse navbar-collapse w-100" id="navbarNavDropdown">
           <ul className="navbar-nav">
-            <li className="nav-item dropdown">
+            <li className="nav-item dropdown  ">
               <a
                 className="btn btn-primary"
                 href="#"
@@ -36,7 +36,7 @@ export const Navbar = (props) => {
                 Favorites
               </a>
 
-              <ul className="dropdown-menu">
+              <ul className="dropdown-menu justify-content-between">
                 {/* map de los elementos que tengo en favoritos */}
                 {store.favs.map((item, index) => {
                   return (

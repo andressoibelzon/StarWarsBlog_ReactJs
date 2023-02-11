@@ -79,8 +79,8 @@ const getState = ({
                 })
             },
             deleteFavs: (name) => {
-                console.log("delete")
-                console.log(name)
+                // console.log("delete")
+                // console.log(name)
 
                 const store = getStore();
                 console.log(store.favs)
